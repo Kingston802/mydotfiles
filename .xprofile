@@ -1,0 +1,7 @@
+nitrogen --restore &
+xmodmap ~/.config/xmodmap
+
+while true; do
+    updatebar
+    sleep 1m # update bar every 1m
+done &
