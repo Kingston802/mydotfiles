@@ -59,6 +59,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *filemcmd[]  = { "st", "-e", "vifm", NULL};
+static const char *bookscmd[]  = { "books", NULL};
 static const char *bravecmd[]  = { "brave", NULL };
 static const char *upvol[] = { "/home/ab/.local/bin/audio", "up", NULL };
 static const char *downvol[] = { "/home/ab/.local/bin/audio", "down", NULL };
@@ -69,7 +71,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
         /* launchkeys */
-        { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = bravecmd} },
+        { MODKEY|ShiftMask,             XK_v,      spawn,          {.v = bravecmd } },
+        { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = filemcmd } },
+        { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = bookscmd } },
+        /* defaults */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
