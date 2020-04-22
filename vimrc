@@ -1,12 +1,7 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " some basics
@@ -19,13 +14,10 @@ set wildmenu
 set nohlsearch
 set hidden
 set nowrap 
-set clipboard+=unnamedplus
-set fdm=manual
+set fdm=manual "enable manual folds
 set guiheadroom=0 " fixes terminal emulator issues
 set path+=** " searches subfolders
 set fillchars=""
-
-set viminfo+=n~/.vim/viminfo
 
 " plugin config
 let g:tex_flavor = 'latex'
@@ -39,6 +31,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " sane defaults for vim splits
 set splitbelow splitright
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 autocmd VimLeave *.tex !texclear %<CR>
 
@@ -55,10 +51,12 @@ inoremap jj <ESC>
 " leader commands
 let mapleader = " "
 
+map <leader>h <C-w>t<C-w>H
+map <leader>k <C-w>t<C-w>K
+map <Leader>j :Explore<CR>
+map <Leader>tt :vertical :terminal <CR>
 map <Leader>p :!compiler %<CR>
 map <Leader>v :e ~/.vim/vimrc<CR>
-map <Leader>j :sp<CR> 
-map <Leader>l :vs<CR> 
 map <Leader>\ :VimtexCompile<CR>
 map <leader>t :term zsh<CR>
 map <leader>o :setlocal spell! spelllang=en_us<CR>
