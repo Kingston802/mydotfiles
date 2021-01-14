@@ -1,0 +1,5 @@
+xsetroot -cursor_name left_ptr
+setxkbmap -option altwin:swap_alt_win
+xmodmap ~/.config/xmodmap
+amixer set Speaker mute 
+xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
