@@ -83,11 +83,10 @@ ctrl + alt + shift + {h,j,k,l}
 
 # terminal emulator
 super + Return
-	st
+  kitty
 # launch browser
 super + space
   firefox 
-  # firefox
 # launch script to open course/text book
 super + shift + b
   books

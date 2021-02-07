@@ -1,6 +1,8 @@
 # sets vim as manpager
 export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist noma' -\""
 
+export BAT_THEME="Nord"
+
 PATH="$HOME/.gem/ruby/2.7.0/bin/:$PATH"
 PATH="$HOME/programming/cloned-repos/vasm/:$PATH"
 # export PATH=”$HOME/.emacs.d/bin:$PATH”
