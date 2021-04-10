@@ -10,6 +10,13 @@ PATH="$HOME/programming/cloned-repos/vasm/:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ab/.oh-my-zsh"
 
+# java lsp 
+# export JAR=/path/to/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar
+# export GRADLE_HOME=$HOME/gradle
+# export JAVA_HOME=/usr/lib/jvm/default
+# export JDTLS_CONFIG=/usr/bin/jdtls
+# export WORKSPACE=$HOME/workspace
+
 ZSH_THEME="robbyrussell"
 
 # Edit line in vim with ctrl-e
